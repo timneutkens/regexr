@@ -27,7 +27,7 @@ var staticAssets = [
 ];
 
 function compileJs(watch) {
-	var bundler = watchify(browserify('./js/RegExr.js', {debug: true}));
+	var bundler = browserify('./js/RegExr.js', {debug: true});
 
 	function rebundle() {
 		bundler.bundle()
@@ -176,7 +176,6 @@ gulp.task('build', function (done) {
 		['parse-index'],
 		'inline',
 		'clean-post-build',
-		'server', 'open-build',
 		done
 	);
 });
